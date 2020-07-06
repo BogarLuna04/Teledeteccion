@@ -1,0 +1,15 @@
+<div>
+    <p>satelites works!</p>
+
+    <div *ngFor = "let satelite of satelites">
+        <div>
+            <img [src]= "satelite.data.url" width="200">
+        </div>
+        <div>
+            <p> Nombre: {{satelite.data.nombre}}</p>
+            <p> Documento: {{satelite.data.documento}}</p>
+            <p> Compañia: {{satelite.data.compania}}</p>
+
+        </div>
+    </div>
+</div>
