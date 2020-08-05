@@ -1,15 +1,25 @@
 <div>
     <p>satelites works!</p>
 
-    <div *ngFor = "let satelite of satelites">
-        <div>
-            <img [src]= "satelite.data.url" width="200">
+    <div fxLayout="row" fxLayout.xs="column">
+        <mat-card class="satelite-card" *ngFor="let satelite of satelites">
+          <mat-card-header>
+            <mat-card-title><h3>Nombre: {{satelite.data.nombre}}</h3></mat-card-title>
+            <mat-card-subtitle><h4>Documento: {{satelite.data.documento}}</h4></mat-card-subtitle>
+            <mat-card-subtitle>Compañia: {{satelite.data.ciudad}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="satelite.data.url">
+          <mat-card-content>
+            <h3>Tipo de imágenes: </h3><p>{{satelite.data.tipo}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button (click)="openDialog(satelite.id, satelite.data)" mat-raised-button color="primary">
+                <mat-icon>create</mat-icon> EDITAR
+            </button>
+            <button (click)="deleteSatelite(satelite.id)" mat-raised-button color="warn">
+              <mat-icon>delete</mat-icon> ELIMINAR
+            </button>
+          </mat-card-actions>
+        </mat-card>
         </div>
-        <div>
-            <p> Nombre: {{satelite.data.nombre}}</p>
-            <p> Documento: {{satelite.data.documento}}</p>
-            <p> Compañia: {{satelite.data.compania}}</p>
-
-        </div>
-    </div>
 </div>

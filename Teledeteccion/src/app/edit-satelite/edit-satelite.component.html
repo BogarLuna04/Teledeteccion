@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Editar Satelite</h2>
+
+<mat-dialog-content [formGroup]="editarFormGroup">
+
+  <div class="example-container">
+
+    <ng-template matStepLabel>Nombre</ng-template>
+      <mat-form-field>
+        <input matInput value="{{ sateliteData.nombre }}" formControlName="nombre" required>
+      </mat-form-field>
+
+      <ng-template matStepLabel>Documento</ng-template>
+      <mat-form-field>
+        <input matInput value="{{ sateliteData.documento }}" placeholder="Documento" formControlName="documento" required>
+      </mat-form-field>
+
+      <ng-template matStepLabel>Ciudad</ng-template>
+      <mat-form-field>
+        <input matInput value="{{ sateliteData.compania }}" placeholder="Compañia" formControlName="ciudad" required>
+      </mat-form-field>
+
+      <ng-template matStepLabel>Síntomas</ng-template>
+      <mat-form-field>
+        <textarea  matInput value="{{ sateliteData.tipo }}" placeholder="Tipo de imágenes" formControlName="sintomas" rows="3" required></textarea>
+      </mat-form-field>
+
+      <ng-template matStepLabel>Url</ng-template>
+      <mat-form-field>
+        <input matInput value="{{ sateliteData.url }}" placeholder="url" formControlName="url" required>
+      </mat-form-field>
+
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="closeDialog()" >Cerrar</button>
+    <button class="mat-raised-button mat-primary" (click)="actualizarSatelite()">Guardar</button>
+</mat-dialog-actions>

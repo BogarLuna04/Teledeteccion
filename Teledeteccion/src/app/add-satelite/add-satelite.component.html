@@ -1,0 +1,71 @@
+<p>add-satelite works!</p>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="nombreFormGroup">
+      <form [formGroup]="nombreFormGroup">
+        <ng-template matStepLabel>Ingrese el nombre</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Nombre del satelite" formControlName="nombre" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="documentoFormGroup">
+      <form [formGroup]="documentoFormGroup">
+        <ng-template matStepLabel>Ingrese su documento</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Documento" formControlName="documento" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Volver</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="companiaFormGroup">
+      <form [formGroup]="companiaFormGroup">
+        <ng-template matStepLabel>Ingrese la compañia</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Compañia" formControlName="compania" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Volver</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="tipoFormGroup">
+      <form [formGroup]="tipoFormGroup">
+        <ng-template matStepLabel>Ingrese el tipo de imagenes satelitales que obtiene</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Tipo de imagenes" formControlName="tipo" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Volver</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="urlFormGroup">
+      <form [formGroup]="urlFormGroup">
+        <ng-template matStepLabel>Ingrese la url</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Url" formControlName="url" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Volver</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Finalizar</ng-template>
+      Has terminado
+      <div>
+        <button mat-button matStepperPrevious>Volver</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="dataForm()">Enviar</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
